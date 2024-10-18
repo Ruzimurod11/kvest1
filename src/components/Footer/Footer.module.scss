@@ -1,0 +1,33 @@
+.footer {
+   display: none;
+}
+
+@media (max-width: 360px) {
+   .footer {
+      margin-top: 24px;
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      height: 100px;
+      border-radius: 8px;
+      width: 100%;
+
+      &__btn {
+         width: 100%;
+         padding: 0 10px;
+         border-radius: 7px;
+         font-size: 16px;
+         font-weight: 700;
+         line-height: 20px;
+         letter-spacing: -1%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 16px 24px;
+         background-color: #f77833;
+         color: #fff;
+      }
+   }
+}

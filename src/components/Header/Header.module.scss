@@ -1,0 +1,152 @@
+.container {
+   max-width: 1117px;
+   margin: 0 auto;
+   padding: 0 15px;
+   box-sizing: content-box;
+}
+
+// =======================================================
+
+.header {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   top: 0;
+   z-index: 50;
+   background-color: #ffffff;
+   &__container {
+      display: flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__menu {
+      // margin: 0px 0px 0px 133px;
+   }
+
+   &__user {
+      display: none;
+   }
+
+   &__burger {
+      display: none;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background-color: transparent;
+      z-index: 2;
+      span {
+         position: absolute;
+         width: 30px;
+         height: 3px;
+         background-color: black;
+         left: 5px;
+         transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
+      }
+
+      span:nth-child(1) {
+         transform: translateY(-10px);
+      }
+      span:nth-child(3) {
+         transform: translateY(10px);
+      }
+   }
+}
+
+.header.open .header__burger span {
+   background-color: white;
+}
+
+.header.open .header__burger span:nth-child(1) {
+   transform: translateY(0) rotate(45deg);
+}
+.header.open .header__burger span:nth-child(2) {
+   opacity: 0;
+}
+.header.open .header__burger span:nth-child(3) {
+   transform: translateY(0) rotate(-45deg);
+}
+
+.menu {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 5px 0;
+   align-items: center;
+   justify-content: center;
+   gap: 34px;
+
+   &__img {
+      width: 19.89px;
+      height: 19.93px;
+   }
+
+   &__link {
+      color: rgb(56, 56, 56);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 110%;
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+   }
+}
+
+@media (max-width: 360px) {
+   .header {
+      &__container {
+         display: flex;
+         min-height: 44px;
+         align-items: center;
+         justify-content: space-between;
+      }
+
+      &__user {
+         display: block;
+      }
+
+      &__burger {
+         display: block;
+      }
+   }
+
+   .menu {
+      position: absolute;
+      left: -360px;
+      top: 0;
+      background-color: blueviolet;
+      padding: 100px 20px 20px 20px;
+      width: 360px;
+      height: 100vh;
+      display: block;
+      transition: transform 0.5s;
+      &__link {
+         color: white;
+         font-size: 21px;
+         display: block;
+         padding: 20px;
+      }
+   }
+
+   .header.open .menu {
+      transform: translateX(100%);
+   }
+
+   .navigation {
+      display: none;
+   }
+}
+
+// ==========================================================
+
+.navigation {
+   margin-top: 80px;
+   span {
+      margin-right: 34px;
+   }
+}
